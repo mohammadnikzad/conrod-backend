@@ -28,7 +28,7 @@ export class UsersController {
     return this.usersService.findAll(paginationDto);
   }
 
-  @Get(':id')
+  @Get(':userId')
   findOne(@Param() idDto: IdDto) {
     return this.usersService.findOne(+idDto.id);
   }
