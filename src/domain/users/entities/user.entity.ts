@@ -1,11 +1,7 @@
-import { RegistryDates } from 'src/common/embedded/registry-dates.embedded';
-import {
-  Column,
-  CreateDateColumn,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { RegistryDates } from 'common/embedded/registry-dates.embedded';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity()
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
