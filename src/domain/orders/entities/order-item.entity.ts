@@ -21,4 +21,8 @@ export class OrderItem {
 
   @Column({ type: 'decimal', precision: 6, scale: 2 })
   price: number;
+
+  get subTotal() {
+    return this.quantity * this.price;
+  }
 }
