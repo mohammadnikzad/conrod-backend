@@ -7,9 +7,9 @@ import {
   Length,
   ValidateNested,
 } from 'class-validator';
-import { IsCardinal } from 'common/decorators/is-cardinal.decorator';
-import { IsCurrency } from 'common/decorators/is-currency.decorator';
-import { IsEntity } from 'common/decorators/is-entity.decorator';
+import { IsCardinal } from 'common/decorators/validators/is-cardinal.decorator';
+import { IsCurrency } from 'common/decorators/validators/is-currency.decorator';
+import { IsEntity } from 'common/decorators/validators/is-entity.decorator';
 import { IdDto } from 'common/dto/id.dto';
 
 export class CreateProductDto {
