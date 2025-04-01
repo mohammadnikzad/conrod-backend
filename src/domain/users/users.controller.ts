@@ -13,6 +13,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { IdDto } from 'common/dto/id.dto';
 import { PaginationDto } from 'common/dto/pagination.dto';
+import { RemoveDto } from 'common/dto/remove.dto';
 
 @Controller('users')
 export class UsersController {
@@ -39,7 +40,12 @@ export class UsersController {
   }
 
   @Delete(':id')
-  remove(@Param() idDto: IdDto) {
-    return this.usersService.remove(+idDto.id);
+  remove(@Param() idDto: IdDto, @Query() { soft }: RemoveDto) {
+    return this.usersService.remove(+idDto.id, soft);
+  }
+
+  @Patch(':id/recover')
+  recover(@Param() idDto: IdDto) {
+    return this.usersService.recover(+idDto.id);
   }
 }

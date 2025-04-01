@@ -1,4 +1,10 @@
-import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  DeleteDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryColumn,
+} from 'typeorm';
 import { Order } from './order.entity';
 import { Product } from 'products/entities/product.entity';
 
@@ -21,6 +27,9 @@ export class OrderItem {
 
   @Column({ type: 'decimal', precision: 6, scale: 2 })
   price: number;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 
   get subTotal() {
     return this.quantity * this.price;
